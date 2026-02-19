@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "Running pre-commit hook..."
+
+if git diff --cached --check; then
+  echo "No formatting issues found."
+else
+  echo "Formatting issues detected. Commit rejected."
+  exit 1
+fi
